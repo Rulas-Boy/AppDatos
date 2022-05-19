@@ -34,7 +34,8 @@ public class RegistroUsuarios extends AppCompatActivity {
         values.put(Utilidades.CAMPO_NOMBRE, et2.getText().toString());
         values.put(Utilidades.CAMPO_TELEFONO, et3.getText().toString());
 
-        Long idRes = db.insert(Utilidades.TABLA_USUARIO, Utilidades.CAMPO_ID, values);
+        long idRes = db.insert(Utilidades.TABLA_USUARIO, Utilidades.CAMPO_ID, values);
+        db.close();
 
         Toast.makeText(this, "Id Registrado: " + idRes, Toast.LENGTH_SHORT).show();
     }
