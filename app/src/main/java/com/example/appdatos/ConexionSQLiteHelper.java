@@ -6,16 +6,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class ConexionSQLiteHelper extends SQLiteOpenHelper {
-    final String CREATE_TABLE = "CREATE TABLE usuarios (id INTEGER, nombre TEXT, telefono TEXT);";
+import com.example.appdatos.utilidades.Utilidades;
 
+public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     public ConexionSQLiteHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE);
+        db.execSQL(Utilidades.CREATE_TABLE);
     }
 
     @Override
