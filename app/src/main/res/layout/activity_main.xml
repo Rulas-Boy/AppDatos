@@ -13,23 +13,27 @@
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="RegistroUsuario"
         android:text="Registrar usuario" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="ConsultaUsuario"
         android:text="Consultar usuario" />
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="ConsultaSpinner"
         android:text="Consulta usuario con spinner" />
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="ConsultaLista"
         android:text="Consulta usuarios con lista" />
 </LinearLayout>
