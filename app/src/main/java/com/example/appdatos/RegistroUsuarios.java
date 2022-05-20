@@ -26,6 +26,30 @@ public class RegistroUsuarios extends AppCompatActivity {
     }
 
     public void Registro(View view) {
+        registroUsuario();
+        //registroUsuarioSql();
+    }
+
+    // Registro de usuario con sentencia SQL
+    private void registroUsuarioSql() {
+        ConexionSQLiteHelper conexion = new ConexionSQLiteHelper(this, "bd_usuarios", null, 1);
+        SQLiteDatabase db = conexion.getWritableDatabase();
+
+        // Código de insert
+        String insert = "INSERT INTO " + Utilidades.TABLA_USUARIO + " (" + Utilidades.CAMPO_ID + ", " +
+                Utilidades.CAMPO_NOMBRE + ", " + Utilidades.CAMPO_TELEFONO + ") VALUES (" +
+                et1.getText().toString() + ", '" + et2.getText().toString() +"', '" +
+                et3.getText().toString() + "');";
+
+        // Para ejecutar cualquier código en SQL
+        db.execSQL(insert);
+
+        // Cierra base de datos
+        db.close();
+    }
+
+    // Registro de usuario regular con ContentValues
+    private void registroUsuario() {
         ConexionSQLiteHelper conexion = new ConexionSQLiteHelper(this, "bd_usuarios", null, 1);
         SQLiteDatabase db = conexion.getWritableDatabase();
 
